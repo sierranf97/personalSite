@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url("fontawesome-all.min.css");
+
+
+body {
+     background-image: url('../images/main_bg.jpg');
+     background-size: cover;
+    }
+
+h1 {
+    font-family: "Hedvig Letters Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #CFD6DE;
+}
+
+h3 {
+    font-family: "Hedvig Letters Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #CFD6DE;
+}
+
+p {
+    color: #272F22;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    color: #271C1C;
+    font-family: "Hedvig Letters Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #CFD6DE;
+}
+
+.intro-icon {background-color: None
+    text-align: left
+}
+
+.card-link {
+    color: #271C1C;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.feature {
+    background-color: #797A6D;
+}
+
+#nav_bar {
+  background-color: #272F22;
+}
+
+#foot-bar {
+  background-color: #272F22;
+}
+
+#name-card {
+    background-color: #5C6449;
+    opacity: 0.95;
+}
+
+.active-button {
+  background-color: None;
+  color: #B2D3BE;
+  border-bottom: 1mm solid #5C6449;
+}
+
+.button {
+  color: #797A6D;
+}
+
+.nav-pills {
+    --bs-nav-pills-border-radius: 0;
+    --bs-nav-pills-link-active-color: #fff;
+    --bs-nav-pills-link-active-bg: #fff;
+    font-family: "Hedvig Letters Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nav {
+    --bs-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(--bs-link-color);
+    --bs-nav-link-hover-color: #B2D3BE;
+    --bs-nav-link-disabled-color: var(--bs-secondary-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #F2F4D1; /*set the color you want here*/
+}
