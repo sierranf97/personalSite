@@ -1,5 +1,15 @@
-<div class="container m-0 mw-100" id="nav_bar" style="">
-    <footer class="d-flex flex-wrap justify-content-center py-3">
-
+<div class="container m-0 mw-100" id="mainFoot" style="">
+    <footer class="justify-content-center align-content-center py-2 px-5">
+        <div class="row py-2">
+            <div class="col ms-4 px-5 footer-col">
+            <a href="{{ url_for('home') }}" style="color:#797A6D; font-size:15px; float:right" class="mb-0">Go Home</a>
+            </div>
+            <div class="col-3 px-3 footer-col" style="border-left:1mm solid #797A6D; border-right:1mm solid #797A6D">
+            <p style="color:#797A6D; font-size:15px;" class="mb-0 text-center">2024 © Copyright Sierra Flores</p>
+            </div>
+            <div class="col me-4 px-5 footer-col">
+            <a href="{{ url_for('contact') }}" style="color:#797A6D; font-size:15px" class="mb-0 text-start">Contact Me</a>
+            </div>
+        </div>
     </footer>
 </div>

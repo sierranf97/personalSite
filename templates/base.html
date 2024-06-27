@@ -29,7 +29,7 @@
       <div class="row">
         <div class="col-2 col-xs-1 left-margin">
         </div>
-        <div class="col-8 col-xs-10 px-0 main-page d-flex flex-wrap justify-content-center">
+        <div class="col-8 col-xs-10 px-0 main-page d-flex flex-wrap justify-content-center py-5">
             {% block content %}{% endblock %}
         </div>
         <div class="col-2 col-xs-1 right-margin">
@@ -39,5 +39,6 @@
 
     {% include "footer.html" %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src={{url_for('static',filename='js/scripts.js')}}></script>
 </body>
 </html>

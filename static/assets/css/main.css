@@ -54,7 +54,11 @@ a {
     background-color: #797A6D;
 }
 
-#nav_bar {
+#mainNav {
+  background-color: #272F22;
+}
+
+#mainFoot {
   background-color: #272F22;
 }
 
@@ -64,7 +68,7 @@ a {
 
 #name-card {
     background-color: #5C6449;
-    opacity: 0.95;
+    opacity: 0.94;
 }
 
 .active-button {
@@ -103,4 +107,11 @@ a {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #F2F4D1; /*set the color you want here*/
+}
+
+.feature {
+    opacity: 0.94;
+}
+
+.footer-col {
 }
