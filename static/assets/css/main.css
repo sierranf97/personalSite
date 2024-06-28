@@ -2,17 +2,21 @@
 @import url("fontawesome-all.min.css");
 
 
-body {
-     background-image: url('../images/main_bg.jpg');
-     background-size: cover;
-    }
-
 h1 {
     font-family: "Hedvig Letters Serif", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    color: #CFD6DE;
+    color: #272F22;
+}
+
+h2 {
+    font-size:35px;
+    font-family: "Hedvig Letters Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color:#5C6449
 }
 
 h3 {
@@ -24,6 +28,7 @@ h3 {
 }
 
 p {
+    font-size: 16px;
     color: #272F22;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -39,12 +44,13 @@ a {
     color: #CFD6DE;
 }
 
-.intro-icon {background-color: None
+.intro-icon {
+    background-color: None
     text-align: left
 }
 
 .card-link {
-    color: #271C1C;
+    color: #272F22;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -52,6 +58,12 @@ a {
 
 .feature {
     background-color: #797A6D;
+    opacity: 0.94;
+}
+
+.offleft {
+    margin-left: -9000px;
+    position: absolute;
 }
 
 #mainNav {
@@ -69,12 +81,6 @@ a {
 #name-card {
     background-color: #5C6449;
     opacity: 0.94;
-}
-
-.active-button {
-  background-color: None;
-  color: #B2D3BE;
-  border-bottom: 1mm solid #5C6449;
 }
 
 .button {
@@ -107,10 +113,6 @@ a {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #F2F4D1; /*set the color you want here*/
-}
-
-.feature {
-    opacity: 0.94;
 }
 
 .footer-col {

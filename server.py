@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import datetime
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
@@ -24,6 +24,11 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///movies.db"
 db.init_app(app)
 
 
+@app.context_processor
+def inject_now():
+    return {'now': datetime.today().strftime('%Y')}
+
+
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -47,6 +52,11 @@ def news():
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
+
+
+@app.route('/website-info')
+def info():
+    return render_template("websiteinfo.html")
 
 
 if __name__ == "__main__":

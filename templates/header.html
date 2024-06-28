@@ -5,12 +5,12 @@
         <span class="fs-4"></span>
       </a>
 
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link active-button" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link button">About</a></li>
-        <li class="nav-item"><a href="{{ url_for('projects') }}" class="nav-link button">Projects</a></li>
-        <li class="nav-item"><a href="{{ url_for('news') }}" class="nav-link button">Newsfeed</a></li>
-        <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link button">Contact</a></li>
+      <ul class="nav nav-pills me-4">
+        <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link button" aria-current="page" id="homebutton">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link button" id="aboutbutton" onclick="AboutNav();">About</a></li>
+        <li class="nav-item"><a href="{{ url_for('projects') }}" class="nav-link button" id="projectsbutton">Projects</a></li>
+        <li class="nav-item"><a href="{{ url_for('news') }}" class="nav-link button" id="newsbutton">Newsfeed</a></li>
+        <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link button" id="contactbutton">Contact</a></li>
       </ul>
     </header>
-  </nav>
+</nav>

@@ -6,12 +6,130 @@
     <title>{% block title %}Sierra Flores - About{% endblock %}</title>
 
     {% block styles %}
+        .left-margin {
+            background-color: #797A6D;
+            opacity: 0.8;
+        }
+
+        .right-margin {
+            background-color: #797A6D;
+            opacity: 0.8;
+        }
+
+        body {
+            background-color: #CFD6DE
+        }
+
+        a {
+            font-size: 17px;
+            color: #CFD6DE;
+            text-decoration: none;
+            font-family: "Hedvig Letters Serif", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+        }
+
+        #aboutbutton {
+            {% include "button_format.txt" %}
+        }
 
     {% endblock %}
 
 </head>
 <body>
+
+    {% block margin %}
+    <div class="sticky-top col-12 mt-2 pt-4">
+        <div class="row mb-2">
+            <a href="#overview"  style="font-style: italic">Overview</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#education"  style="font-style: italic">Education</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#work"  style="font-style: italic">Work History</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#skills"  style="font-style: italic">Software & Skills</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#research"  style="font-style: italic">Undergraduate Research</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#hobbies"  style="font-style: italic">Hobbies & Interests</a>
+        </div>
+    </div>
+    {% endblock %}
+
     {% block content %}
+    <!-- Main Title -->
+    <div class="col mx-5">
+        <div class="row mb-4">
+            <h1>About</h1>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="row mb-4" id="overview">
+            <div class="col-7">
+                <h2>Nice to meet you - I'm Sierra!</h2>
+                <p>I currently live in Dallas, Texas with my husband, Jesse.</p>
+                <p>I've been working in biotech for over 5 years, and have done everything from benchtop research to building project and data management systems.</p>
+                <p class="mb-1">My work preferences:</p>
+                <p class="mb-1">Remote → Hybrid/Office in Dallas → Hybrid/Office Elsewhere*</p>
+                <p class="mb-0" style="font-size:12px">*I'm available to relocate starting ~February 2025</p>
+            </div>
+            <div class="col-5 justify-content-center">
+                <img src="{{url_for('static', filename='assets/images/jesse_and_sierra.jpeg')}}" class="img-fluid" alt="Jesse and Sierra on a bridge in front of the vibrantly blue Kawarau River." style="width:100%">
+            </div>
+        </div>
+
+        <div class="row mb-4" id="education">
+            <div class="col-12">
+                <h2>Education</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="work">
+            <div class="col-12">
+                <h2>Work History</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="row mb-4 " id="skills">
+            <div class="col-12">
+                <h2>Software & Skills</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="research">
+            <div class="col-12">
+                <h2>Undergraduate Research</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="coursework">
+            <div class="col-12">
+                <h2>Relevant Coursework</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="hobbies">
+            <div class="col-12">
+                <h2>Hobbies & Interests</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}
+    {% block script %}
+
+        FormatNav()
 
     {% endblock %}
 </body>

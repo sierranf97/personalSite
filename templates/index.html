@@ -6,38 +6,65 @@
     <title>{% block title %}Sierra Flores - Home{% endblock %}</title>
 
     {% block styles %}
-        p {font-size: 19px;}
+
+        p {
+            font-size: 19px;
+            color: #272F22;
+        }
+
+        body {
+             background-image: url('../static/assets/images/main_bg.jpg') !important;
+             background-size: cover;
+            }
+
+        h1 {
+            color: #CFD6DE;
+        }
+
+        h2 {
+            font-size:23px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #9BA473;
+        }
+
+        #homebutton {
+            {% include "button_format.txt" %}
+        }
+
     {% endblock %}
 
 </head>
 <body>
-    {% block content %}
 
+    {% block content %}
+    <h1 class="offleft">The body of this page displays an image of a path through tall grass, with Mount Cook, on the South Island of New Zealand, visible in the background.</h1>
 <!-- Name Card -->
     <div class="container mt-5 mb-4 mx-5 py-4" id="name-card">
         <div class="row py-2 px-4 d-flex row-cols-xs-1 row-cols-2">
             <div class="col-4 col-xs-12 px-4 py-2" id="pic-column">
-                <img src="{{url_for('static', filename='assets/images/Headshot.png')}}" class="img-fluid">
+                <img src="{{url_for('static', filename='assets/images/Headshot.png')}}" class="img-fluid" alt="A close-up portrait of Sierra Flores.">
             </div>
             <div class="col-8 col-xs-12 p-0" id="summary-column">
-                <div class="row"><h1>Hi, I'm Sierra!</h1></div>
-                <div class="row"><p style="font-size:20px; color:#9BA473">Biological Engineer | Technical Project Manager</p></div>
+                <div class="row"><h1>Hi, I'm Sierra Flores!</h1></div>
+                <div class="row pb-3"><h2>Biological Engineer | Technical Project Manager</h2></div>
                 <div class="row"><p>As a Biological Engineer (EIT), my work has been focused on operations scale-up, project and data management, and assay development.</p></div>
                 <div class="row"><p>I'm a synthetic biology and biotechnology enthusiast.</p></div>
             </div>
         </div>
         <div class="row px-0 mt-3 pb-2 mx-4 mw-50 justify-content-center" id="namecard-links">
             <div class="col-3 d-flex flex-wrap justify-content-center">
-                <a class="card-link" href="https://www.linkedin.com/in/sierra-flores/">LinkedIn Profile</a>
+                <a class="card-link" href="https://www.linkedin.com/in/sierra-flores/"><em>LinkedIn Profile</em></a>
             </div>
             <div class="col-3 d-flex flex-wrap justify-content-center">
-                <a class="card-link" href="https://github.com/sierranf97">GitHub Profile</a>
+                <a class="card-link" href="https://github.com/sierranf97"><em>GitHub Profile</em></a>
             </div>
             <div class="col-3 d-flex flex-wrap justify-content-center">
-                <a class="card-link" href="{{url_for('static', filename='/assets/Flores_Sierra_Resume.pdf')}}" download>Download Resume</a>
+                <a class="card-link" href="{{url_for('static', filename='/assets/Flores_Sierra_Resume.pdf')}}" download><em>Download Resume</em></a>
             </div>
             <div class="col-3 d-flex flex-wrap justify-content-center">
-                <a class="card-link" href="{{url_for('static', filename='/assets/Flores_Sierra_Resume.pdf')}}" target='_blank'>Open Resume</a>
+                <a class="card-link" href="{{url_for('static', filename='/assets/Flores_Sierra_Resume.pdf')}}" target='_blank'><em>Open Resume</em></a>
             </div>
         </div>
     </div>
@@ -67,7 +94,7 @@
         <div class="row col-12 py-0 float-start  mw-100">
             <h3>Projects</h3>
         </div>
-        <div class="row col-12 py-0 px-3 float-start  mw-100">
+        <div class="row col-12 py-0 float-start  mw-100">
             <p>Completed and in-progress projects.</p>
         </div>
         </a>
