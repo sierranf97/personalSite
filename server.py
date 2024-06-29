@@ -8,16 +8,20 @@ from sqlalchemy.orm import relationship, DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Text
 import smtplib
 from forms import CreatePostForm, ContactForm
+from dotenv import load_dotenv, dotenv_values
+import os
 
+load_dotenv()
+my_secrets = dotenv_values(".env")
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ds37fw4&C#ce120cenw'
-# os.environ.get('BLOG_SECRET_KEY')
+app.config['SECRET_KEY'] = my_secrets['WEBSITE_KEY']
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
 my_email = "sierranf97@gmail.com"
-password = "udxgrtacidodifbd"
+password = my_secrets['EMAIL_PASSWORD']
+print(password)
 
 
 class Base(DeclarativeBase):
@@ -84,9 +88,9 @@ def contact():
             email=request.form['email'],
             message=request.form['message']
         )
-        if request.form['name'] is "":
+        if request.form['name'] == "":
             flash("Name is required")
-        if request.form['message'] is "":
+        if request.form['message'] == "":
             flash("A message is required")
         return render_template("contact.html", form=new_form)
 
