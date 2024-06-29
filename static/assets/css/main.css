@@ -93,7 +93,7 @@ a {
 
 .btn {
     color: #CFD6DE;
-    background-color: #9BA473;
+    background-color: #5C6449;
     border: None;
     hover-color: #5C6449;
 }
@@ -148,4 +148,8 @@ a {
 }
 
 .footer-col {
+}
+
+.flash {
+    color: red
 }

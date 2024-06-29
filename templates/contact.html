@@ -35,12 +35,20 @@
             <h1>Contact</h1>
         </div>
         <div class="row mb-4">
-            <h5 style="color:#9BA473">Send me a message here, or email me directly at sierranf97@gmail.com</h5>
+            <h5 style="color:#5C6449">Send me a message here, or email me directly at sierranf97@gmail.com</h5>
         </div>
         <div class="row">
             <div class="col-2">
             </div>
             <div class="col-8">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="flash">{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
             {{ ckeditor.load() }}
             {{ ckeditor.config(name='body') }}
             {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
