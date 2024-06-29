@@ -1,3 +1,4 @@
+{% from "bootstrap5/form.html" import render_form %}
 {% extends "base.html" %}
 
 <!-- Page Header -->
@@ -6,6 +7,19 @@
     <title>{% block title %}Sierra Flores - Contact{% endblock %}</title>
 
     {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
 
     #contactbutton {
         {% include "button_format.txt" %}
@@ -16,6 +30,24 @@
 </head>
 <body>
     {% block content %}
-
+    <div class="col mx-5">
+        <div class="row mb-1">
+            <h1>Contact</h1>
+        </div>
+        <div class="row mb-4">
+            <h5 style="color:#9BA473">Send me a message here, or email me directly at sierranf97@gmail.com</h5>
+        </div>
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+            {{ ckeditor.load() }}
+            {{ ckeditor.config(name='body') }}
+            {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
     {% endblock %}
 </body>

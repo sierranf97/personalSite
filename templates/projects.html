@@ -6,16 +6,56 @@
     <title>{% block title %}Sierra Flores - Projects{% endblock %}</title>
 
     {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
 
     #projectsbutton {
-            {% include "button_format.txt" %}
-        }
+        {% include "button_format.txt" %}
+    }
 
     {% endblock %}
 
 </head>
 <body>
     {% block content %}
+    <!-- Main Title -->
+    <div class="col mx-5">
+        <div class="row mb-4">
+            <h1>Projects</h1>
+        </div>
+
+        <div class="row mb-4" id="pm">
+            <div class="col-12">
+                <h2>Project Management</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="data">
+            <div class="col-12">
+                <h2>Research/Data</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="programming">
+            <div class="col-12">
+                <h2>Programming</h2>
+                <p>Placeholder text.</p>
+            </div>
+        </div>
+    </div>
 
     {% endblock %}
 </body>

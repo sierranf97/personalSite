@@ -83,6 +83,21 @@ a {
     opacity: 0.94;
 }
 
+.form-label{
+    font-size: 16px;
+    color: #272F22;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.btn {
+    color: #CFD6DE;
+    background-color: #9BA473;
+    border: None;
+    hover-color: #5C6449;
+}
+
 .button {
   color: #797A6D;
 }
@@ -111,8 +126,25 @@ a {
     list-style: none;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #F2F4D1; /*set the color you want here*/
+.btn:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #9BA473; /*set the color you want here*/
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0d6efd;
+    --bs-btn-border-color: None;
+    --bs-btn-hover-color: #CFD6DE;
+    --bs-btn-hover-bg: #5C6449;
+    --bs-btn-hover-border-color: None;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0a58ca;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
 }
 
 .footer-col {

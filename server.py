@@ -7,8 +7,13 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship, DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Text
 import smtplib
+from forms import CreatePostForm, ContactForm
+
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'ds37fw4&C#ce120cenw'
+# os.environ.get('BLOG_SECRET_KEY')
+ckeditor = CKEditor(app)
 Bootstrap5(app)
 
 
@@ -51,7 +56,8 @@ def news():
 
 @app.route('/contact')
 def contact():
-    return render_template("contact.html")
+    form = ContactForm()
+    return render_template("contact.html", form=form)
 
 
 @app.route('/website-info')
