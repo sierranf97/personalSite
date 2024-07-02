@@ -3,15 +3,86 @@
 <!-- Page Header -->
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Sierra Flores - About{% endblock %}</title>
+    <title>{% block title %}Sierra Flores - Website Info{% endblock %}</title>
 
     {% block styles %}
+        .left-margin {
+            background-color: #797A6D;
+            opacity: 0.8;
+        }
 
+        .right-margin {
+            background-color: #797A6D;
+            opacity: 0.8;
+        }
+
+        body {
+            background-color: #CFD6DE;
+        }
+
+        a {
+            font-size: 17px;
+            color: #272F22;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        ul {
+            padding-left: 10px;
+        }
+
+        img {
+            margin: auto;
+            display: block;
+        }
     {% endblock %}
 
 </head>
 <body>
     {% block content %}
+    <div class="col mx-5">
+        <div class="row mb-4">
+            <h1>About This Website</h1>
+        </div>
 
+        <div class="row mb-4">
+            <div class="col-12">
+            <p class="mb-0">I created this website from scratch using the following tools:</p>
+            <ul class="ps-5 mb-4">
+                <li>Flask to develop the site</li>
+                <li>Jinja to create the HTML templates</li>
+                <li>Dotenv to manage environment variables</li>
+                <li>CKEditor to create newsfeed posts</li>
+                <li>Bootstrap for the header element</li>
+                <li>Bootstrap Grid System for most elements</li>
+                <li>SQLAlchemy and SQLite to create the database that stores the newsfeed posts</li>
+                <li>WTForms to create the Contact form</li>
+            </ul>
+            <p>I personally took each photo used on this website.</p>
+            <p class="mb-0">This website's color scheme was extracted (using <a href="https://coolors.co/">coolors.co</a>) from this photo of Torc Waterfall in Killarney, Co. Kerry, Ireland.</p>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-12">
+                <img style="width:45%" src="{{url_for('static', filename='assets/images/torc_waterfall.jpg')}}" alt="An image of Torc Waterfall, surrounded by large boulders and gree foliage, with stone steps leading off to the left">
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <img style="width:100%; border:5px solid" src="{{url_for('static', filename='assets/images/color_scheme.png')}}" alt="An array of browns and greens (French Gray, Battleship Gray, Ebony, Black Olive, and Moss Green), comprising the color scheme for this website">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>The code for this website can be found in <a href="https://github.com/sierranf97/personalSite">this Github repository</a>.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>If you find any issues with this website, please report them <a href="{{ url_for('contact') }}">here</a>.</p>
+            </div>
+        </div>
+    </div>
     {% endblock %}
 </body>

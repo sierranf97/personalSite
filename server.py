@@ -21,7 +21,6 @@ Bootstrap5(app)
 
 my_email = "sierranf97@gmail.com"
 password = my_secrets['EMAIL_PASSWORD']
-print(password)
 
 
 class Base(DeclarativeBase):

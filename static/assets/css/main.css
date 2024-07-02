@@ -35,6 +35,14 @@ p {
     font-style: normal;
 }
 
+li {
+    font-size: 16px;
+    color: #272F22;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 a {
     color: #271C1C;
     font-family: "Hedvig Letters Serif", serif;
@@ -99,7 +107,12 @@ a {
 }
 
 .button {
-  color: #797A6D;
+    color: #797A6D;
+    font-family: "Hedvig Letters Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #CFD6DE;
 }
 
 .nav-pills {
