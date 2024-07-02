@@ -5,6 +5,11 @@
 */
 
 // Anonymous "self-invoking" function
+let tooltipelements = document.querySelectorAll("[data-bs-toggle='tooltip']");
+tooltipelements.forEach((el) => {
+    new bootstrap.Tooltip(el);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
     const mainNav = document.getElementById('mainNav');
