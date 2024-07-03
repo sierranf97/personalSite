@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, EmailField
+from wtforms import StringField, SubmitField, EmailField, TextAreaField
 from wtforms.validators import DataRequired, URL, Email
+from wtforms.widgets import TextArea
 from flask_ckeditor import CKEditorField
 
 
@@ -17,5 +18,5 @@ class CreatePostForm(FlaskForm):
 class ContactForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired('A name is required')])
     email = EmailField("Email (Optional)", validators=[])
-    message = CKEditorField("Message", validators=[DataRequired('A message is required')])
+    message = TextAreaField("Message", validators=[DataRequired('A message is required')])
     submit = SubmitField("Send Message")

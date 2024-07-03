@@ -49,8 +49,6 @@
             {% endif %}
             {% endwith %}
 
-            {{ ckeditor.load() }}
-            {{ ckeditor.config(name='body') }}
             {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
             </div>
             <div class="col-2">
