@@ -1,9 +1,3 @@
-/*!
-* Start Bootstrap - Clean Blog v6.0.9 (https://startbootstrap.com/theme/clean-blog)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
-*/
-
 // Anonymous "self-invoking" function
 let tooltipelements = document.querySelectorAll("[data-bs-toggle='tooltip']");
 tooltipelements.forEach((el) => {

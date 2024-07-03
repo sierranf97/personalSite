@@ -27,6 +27,15 @@ h3 {
     color: #CFD6DE;
 }
 
+h4 {
+    color: #6B6F5B;
+    font-size: 20px;
+    font-family: "Hedvig Letters Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 p {
     font-size: 16px;
     color: #272F22;
@@ -55,6 +64,10 @@ a {
 .intro-icon {
     background-color: None
     text-align: left
+}
+
+.box_textshadow {
+     text-shadow: 2px 2px 0px #272F22; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
 .card-link {
@@ -113,6 +126,19 @@ a {
     font-weight: 400;
     font-style: normal;
     color: #CFD6DE;
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+
+.carousel-control-prev-icon {
+    filter: invert(100%);
+}
+
+.carousel-control-next-icon {
+    filter: invert(100%);
 }
 
 .nav-pills {

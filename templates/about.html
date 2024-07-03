@@ -63,6 +63,9 @@
         <div class="row mb-2">
             <a href="#hobbies"  style="font-style: italic">Hobbies & Interests</a>
         </div>
+        <div class="row mb-2">
+            <a href="#funfacts"  style="font-style: italic">Fun Facts</a>
+        </div>
     </div>
     {% endblock %}
 
@@ -79,9 +82,8 @@
                 <h2>Nice to meet you - I'm Sierra</h2>
                 <p>I currently live in Dallas, Texas with my husband, Jesse.</p>
                 <p>I've been working in biotech for over 5 years, and have done everything from benchtop research to building project and data management systems.</p>
-                <p class="mb-1">My work preferences:</p>
-                <p class="mb-1">Remote → Hybrid/Office in Dallas → Hybrid/Office Elsewhere*</p>
-                <p class="mb-0" style="font-size:12px">*I'm available to relocate starting ~February 2025</p>
+                <p class="mb-1">For now, I'm looking for remote or Dallas-based roles*. I love startups, biotech, and genome engineering, and am passionate about data integrity and documentation.</p>
+                <p style="font-size:13px">*I should be able to relocate ~February 2025.</p>
             </div>
             <div class="col-5 justify-content-center">
                 <img src="{{url_for('static', filename='assets/images/jesse_and_sierra.jpeg')}}" class="img-fluid" alt="Jesse and Sierra on a bridge in front of the vibrantly blue Kawarau River." style="width:100%">
@@ -91,7 +93,21 @@
         <div class="row mb-4" id="education">
             <div class="col-12">
                 <h2>Education</h2>
-                <p>Placeholder text.</p>
+
+                <h3 class="mb-1">B.S. Biological Engineering</h3>
+                <h4>Utah State University | May 2021</h4>
+                <p class="mb-1">Emphasis in Synthetic Biology | Minor in Entrepreneurship | Undergraduate Research Fellow</p>
+                <p>Graduated summa cum laude, with Honors<span data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-html="true"
+                                   data-bs-original-title="Completed all Honors program requirements, including an Honors capstone project focused on Project Management">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png" style="width:13px" alt="Question mark symbol">
+                                </span>
+                    | 3.97 GPA</p>
+
+                <h3 class="mb-1">Engineer in Training (EIT) Certification</h3>
+                <h4 class="mb-4">Fundamentals of Engineering Exam - Other Disciplines | September 2020</h4>
+
+                <h3 class="mb-1">Certified SolidWorks Associate (CSWA)</h3>
+                <h4 class="mb-4">SolidWorks CAD Design Associate Exam | October 2018</h4>
             </div>
         </div>
 
@@ -159,6 +175,11 @@
                                    data-bs-original-title="Pandas<br>NumPy<br>Matplotlib<br>SciPy<br>Plotly<br>Scikit-learn<br>Seaborn">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png" style="width:13px" alt="Question mark symbol">
                                 </span></li>
+                            <li>Advanced Excel and Google Sheets
+                                <span data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-html="true"
+                                   data-bs-original-title="vlookup<br>query<br>index<br>Macros<br>Google Apps Script<br>Pivot Tables">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png" style="width:13px" alt="Question mark symbol">
+                                </span></li>
                         </ul>
                         </div>
                         <div class="col-4 pe-2">
@@ -186,9 +207,9 @@
                             <li>Assay Development & QC</li>
                             <li>DNA/RNA Extraction</li>
                             <li>DNA/RNA Quantification</li>
-                            <li>Enzyme-Linked Immunoassays (ELISAs)</li>
                             <li>Electronic Lab Notebooks</li>
                             <li>Lab Information Management Systems</li>
+                            <li>Enzyme-Linked Immunosorbent Assays (ELISAs)</li>
                         </ul>
                         </div>
                         <div class="col-4 pe-2">
@@ -237,14 +258,325 @@
         <div class="row mb-4" id="research">
             <div class="col-12">
                 <h2>Undergraduate Research</h2>
-                <p>Placeholder text.</p>
+                <h3 class="mb-1">Senior Design Project | Dr. David Britt and Fresenius Medical Care</h3>
+                <h4 class="mb-1">January 2020 - May 2021</h4>
+                <div class="px-4 mb-4">
+                <ul>
+                <li>Worked as a key member of a team developing a self-disinfecting surface to aid in bacterial load reduction in hemodialysis systems</li>
+                <li>Completed an accompanying Honors Capstone project focused on Project Management
+                    <ul>
+                        <li>Led weekly team meetings</li>
+                        <li>Led literature review meetings and organized sources</li>
+                        <li>Managed project timeline</li>
+                        <li>Communicated project status to stakeholders at Fresenius Medical Care</li>
+                    </ul></li>
+                <li>Project results can be seen <a href="#" style='font-size: 16px; color: #272F22; font-family: "Poppins", sans-serif; font-weight: 400; font-style: normal; text-decoration:underline'>here</a>.</li>
+                </ul>
+                </div>
+
+                <h3 class="mb-1">Synthetic Biology Research Lab | Dr. Charles Miller</h3>
+                <h4 class="mb-1">September 2015 - May 2016 | August 2018 - October 2019 </h4>
+                <div class="px-4 mb-4">
+                <ul>
+                <li>Assisted in culturing and studying bacteria for bioplastics production</li>
+                <li>Analyzed bacterial phenotypes, including measuring optical density and plotting growth curves</li>
+                <li>Maintained stocks of antibiotic agar plates</li>
+                </ul>
+                </div>
+
+                <h3 class="mb-1">Biomaterials Undergraduate Lab | Dr. Yu Huang</h3>
+                <h4 class="mb-1">January 2019 - August 2019</h4>
+                <div class="px-4 mb-4">
+                <ul>
+                <li>Led a team of students seeking to solubilize anti-inflammatory compounds through nanoparticle synthesis</li>
+                <li>Used sonication and lyophilization to create and stabilize curcumin and indigoidine nanoparticles</li>
+                </ul>
+                </div>
+
             </div>
         </div>
 
         <div class="row mb-4" id="hobbies">
             <div class="col-12">
                 <h2>Hobbies & Interests</h2>
-                <p>Placeholder text.</p>
+
+                <div class="mb-4" id="crafts">
+                    <h3 class="mb-1">Crafts</h3>
+                        <p class="mb-2">I love pretty much any craft, but my great-grandma got me hooked on cardmaking. I also love knitting and cross stitch.</p>
+                        <!-- Carousel wrapper -->
+                    <div class="row">
+
+                        <div class="col-3"></div>
+
+                        <div class="col-6">
+
+                            <div id="carousel" class="carousel slide">
+
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                </div>
+
+                                <div class="carousel-inner">
+
+                                    <div class="carousel-item active">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/fair_cards.PNG')}}" width="300">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Texas State Fair<br>September 2023</h5>
+                                            </div>
+                                        </div>
+                                     </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <video class="img-fluid" autoplay loop muted width="300" style="filter: brightness(60%); align-self:center">
+                                                <source src="{{url_for('static', filename='assets/images/bigger_card.MOV')}}" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <video class="img-fluid" autoplay loop muted width="300" style="filter: brightness(60%); align-self:center">
+                                                <source src="{{url_for('static', filename='assets/images/cactus_card.MOV')}}" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <video class="img-fluid" autoplay loop muted width="300" style="filter: brightness(60%); align-self:center">
+                                                <source src="{{url_for('static', filename='assets/images/food_card.MOV')}}" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <video class="img-fluid" autoplay loop muted width="300" style="filter: brightness(60%); align-self:center">
+                                                <source src="{{url_for('static', filename='assets/images/birthday_card.MOV')}}" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+
+                <div class="mb-4" id="sourdough">
+                    <h3 class="mb-1">Sourdough</h3>
+                        <p class="mb-2">I adopted part of my uncle's sourdough starter, and have been culturing it since mid-2022. Favorite recipes include sourdough loaves, pizza crust, and english muffins.</p>
+                    <div class="row">
+                        <div class="col-12 d-flex flex-wrap justify-content-center align-content-center">
+                            <img src="{{url_for('static', filename='assets/images/sourdough_loaves.jpeg')}}" alt="" style="width:60%; align-self:center">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4" id="games">
+                    <h3 class="mb-1">Strategy Games</h3>
+                    <p>Favorites include Terraforming Mars, Wingspan, and Ark Nova. My dad is a strategy game fanatic, and is even designing his own strategy game that he hopes to publish.</p>
+                </div>
+
+                <div class="mb-4" id="travel">
+                    <h3 class="mb-2">Travel</h3>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <div id="travelcarousel" class="carousel slide">
+
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                                    <button type="button" data-bs-target="#travelcarousel" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                                </div>
+
+                                <div class="carousel-inner">
+
+                                    <div class="carousel-item active">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/NZ_mtcookbridge.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Mount Cook<br>New Zealand, 2022</h5>
+                                            </div>
+                                        </div>
+                                     </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/NZ_milfordflight.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Milford Sound<br>New Zealand, 2022</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/NZ_hobbiton.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Hobbiton<br>New Zealand, 2022</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/NZ_llama.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Rotorua<br>New Zealand, 2022</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/NZ_glenorchyhorses.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Glenorchy<br>New Zealand, 2022</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/GB_towerbridge.jpg')}}" height="600">
+                                        </div>
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="box_textshadow">Tower Bridge<br>England, 2023</h5>
+                                        </div>
+                                     </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/GB_harrypotter.jpg')}}" height="600">
+                                        </div>
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="box_textshadow">Harry Potter Studios<br>England, 2023</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/GB_fishandchips.jpg')}}" height="600">
+                                        </div>
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="box_textshadow">Prince's Head Pub<br>England, 2023</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/GB_lasso.jpg')}}" height="600">
+                                        </div>
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="box_textshadow">Richmond<br>England, 2023</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/IE_cliffsofmoher.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Cliffs of Moher<br>Ireland, 2024</h5>
+                                            </div>
+                                        </div>
+                                     </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/IE_giantscauseway.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Giant's Causeway<br>Ireland, 2024</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/IE_Cahir.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Cahir<br>Ireland, 2024</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/IE_Kenmare.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Kenmare<br>Ireland, 2024</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="{{url_for('static', filename='assets/images/IE_loughtay.jpg')}}" height="600">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5 class="box_textshadow">Lough Tay<br>Ireland, 2024</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#travelcarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#travelcarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4" id="other">
+                    <h3 class="mb-1">Miscellaneous Interests</h3>
+                    <p style="font-size:14px">Survivor&ensp;|&ensp;Cooking Competitions&ensp;|&ensp;Death Cab for Cutie&ensp;|&ensp;Bastille&ensp;|&ensp;80s Music&ensp;|&ensp;John Green&ensp;|&ensp;Annie Dillard&ensp;|&ensp;Stardew Valley</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="funfacts">
+            <div class="col-12">
+                <h2>Fun Facts</h2>
+                <div class="px-3">
+                    <ul class="mb-4">
+                        <li>In middle school my family and I were on The Dog Whisperer. Cesar Milan is a great guy!</li>
+                        <li>In high school I worked part-time as an assistant casting director, and even cast a body double for Scarlett Johansson.</li>
+                        <li>I'm a State Fair enthusiast and love entering Fair craft competitions. Growing up, I won quite a few ribbons at the Orange Country Fair for cross stitch, clay sculpting, and cake decorating. In 2023, I won a blue ribbon at the Texas State Fair for greeting card making.</li>
+                        <li>My parents and I designed and published a card game called My Soundtrack.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
