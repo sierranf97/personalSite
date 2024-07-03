@@ -22,6 +22,11 @@ __pycache__/
 # C extensions
 *.so
 
+# mdb files extensions
+*.scss
+mdb.*
+*.json
+
 # Distribution / packaging
 .Python
 build/
