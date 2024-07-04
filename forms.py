@@ -17,6 +17,6 @@ class CreatePostForm(FlaskForm):
 
 class ContactForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired('A name is required')])
-    email = EmailField("Email (Optional)", validators=[])
+    email = EmailField("Email (optional, but very helpful if you'd like me to respond)", validators=[])
     message = TextAreaField("Message", validators=[DataRequired('A message is required')])
     submit = SubmitField("Send Message")
