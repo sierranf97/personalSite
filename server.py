@@ -2,14 +2,12 @@ from datetime import datetime, date
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
-from flask_gravatar import Gravatar
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import relationship, DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Text
 import smtplib
 from forms import CreatePostForm, ContactForm
 from dotenv import load_dotenv, dotenv_values
-import os
 import sqlite3
 
 load_dotenv()
@@ -35,35 +33,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///newsfeed.db"
 # initialize the app with the extension
 db.init_app(app)
 
-# Connecting to sqlite
-# connection object
-# connection_obj = sqlite3.connect('newsfeed.db')
-
-# cursor object
-# cursor_obj = connection_obj.cursor()
-
-# Creating table
-# cursor_obj.execute("CREATE TABLE posts (_id INTEGER PRIMARY KEY AUTOINCREMENT, post_type VARCHAR(250) NOT NULL, title VARCHAR(250) NOT NULL, subtitle VARCHAR(250) NOT NULL, date VARCHAR(50) NOT NULL, body VARCHAR(5000), img_url VARCHAR(200), img_alt VARCHAR(200))")
-
-# # Creating table
-# table = """CREATE TABLE posts(
-#             _id INTEGER PRIMARY KEY AUTOINCREMENT,
-#             post_type VARCHAR(250) NOT NULL,
-#             title VARCHAR(250) NOT NULL,
-#             subtitle VARCHAR(250) NOT NULL,
-#             date VARCHAR(50) NOT NULL,
-#             body VARCHAR(5000),
-#             img_url VARCHAR(200),
-#             img_alt VARCHAR(200)
-#         );"""
-
-# cursor_obj.execute(table)
-
-# print("Table is Ready")
-
-# # Close the connection
-# connection_obj.close()
-
 
 class Post(db.Model):
     __tablename__ = "posts"
@@ -75,6 +44,10 @@ class Post(db.Model):
     body: Mapped[str] = mapped_column(Text, nullable=True)
     img_url: Mapped[str] = mapped_column(String(250), nullable=True)
     img_alt: Mapped[str] = mapped_column(String(250), nullable=True)
+
+
+with app.app_context():
+    db.create_all()
 
 
 @app.context_processor
@@ -100,6 +73,12 @@ def projects():
 @app.route('/newsfeed')
 def news():
     return render_template("newsfeed.html")
+
+
+@app.route("/post/<int:post_id>", methods=["GET", "POST"])
+def show_post(post_id):
+    requested_post = db.get_or_404(Post, post_id)
+    return render_template("post.html", post=requested_post)
 
 
 @app.route('/contact', methods=['POST', 'GET'])
