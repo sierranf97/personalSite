@@ -1,0 +1,57 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sierra Flores - Create Post{% endblock %}</title>
+
+    {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
+
+    #newsbutton {
+        {% include "button_format.txt" %}
+    }
+
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+    <div class="col mx-5">
+        <div class="row mb-1">
+            <h1>Create Post</h1>
+        </div>
+        <div class="row mb-4">
+            <h5 style="color:#5C6449">Create a new post</h5>
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="flash">{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+    {% endblock %}
+</body>

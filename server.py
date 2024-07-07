@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
@@ -10,6 +10,7 @@ import smtplib
 from forms import CreatePostForm, ContactForm
 from dotenv import load_dotenv, dotenv_values
 import os
+import sqlite3
 
 load_dotenv()
 my_secrets = dotenv_values(".env")
@@ -30,9 +31,50 @@ class Base(DeclarativeBase):
 db = SQLAlchemy(model_class=Base)
 
 # configure the SQLite database, relative to the app instance folder
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///movies.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///newsfeed.db"
 # initialize the app with the extension
 db.init_app(app)
+
+# Connecting to sqlite
+# connection object
+# connection_obj = sqlite3.connect('newsfeed.db')
+
+# cursor object
+# cursor_obj = connection_obj.cursor()
+
+# Creating table
+# cursor_obj.execute("CREATE TABLE posts (_id INTEGER PRIMARY KEY AUTOINCREMENT, post_type VARCHAR(250) NOT NULL, title VARCHAR(250) NOT NULL, subtitle VARCHAR(250) NOT NULL, date VARCHAR(50) NOT NULL, body VARCHAR(5000), img_url VARCHAR(200), img_alt VARCHAR(200))")
+
+# # Creating table
+# table = """CREATE TABLE posts(
+#             _id INTEGER PRIMARY KEY AUTOINCREMENT,
+#             post_type VARCHAR(250) NOT NULL,
+#             title VARCHAR(250) NOT NULL,
+#             subtitle VARCHAR(250) NOT NULL,
+#             date VARCHAR(50) NOT NULL,
+#             body VARCHAR(5000),
+#             img_url VARCHAR(200),
+#             img_alt VARCHAR(200)
+#         );"""
+
+# cursor_obj.execute(table)
+
+# print("Table is Ready")
+
+# # Close the connection
+# connection_obj.close()
+
+
+class Post(db.Model):
+    __tablename__ = "posts"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    post_type: Mapped[str] = mapped_column(String(250), unique=False, nullable=False)
+    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
+    subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
+    date: Mapped[str] = mapped_column(String(250), nullable=False)
+    body: Mapped[str] = mapped_column(Text, nullable=True)
+    img_url: Mapped[str] = mapped_column(String(250), nullable=True)
+    img_alt: Mapped[str] = mapped_column(String(250), nullable=True)
 
 
 @app.context_processor
@@ -70,7 +112,7 @@ def contact():
         email = request.form['email']
         message = request.form['message']
 
-        contents = (f"{name}\n\n{email}\n\n{message}")
+        contents = f"{name}\n\n{email}\n\n{message}"
 
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
@@ -102,6 +144,32 @@ def info():
 @app.route('/message-sent')
 def sent():
     return render_template("messagesent.html")
+
+
+@app.route('/create', methods=["GET", "POST"])
+def create():
+    input_password = request.args.get('pass')
+    form = CreatePostForm()
+    if input_password == my_secrets['ADMIN_PASSWORD'] and request.method == 'GET':
+        return render_template('create.html', form=form)
+
+    if form.validate_on_submit():
+        new_post = Post(
+            post_type=request.form['type'],
+            title=request.form['title'],
+            subtitle=request.form['subtitle'],
+            date=date.today().strftime("%B %d, %Y"),
+            body=request.form['body'],
+            img_url=request.form['img_url'],
+            img_alt=request.form['img_alt'],
+        )
+        db.session.add(new_post)
+        db.session.commit()
+        return redirect(url_for("news"))
+    elif request.method == 'POST':
+        flash(str(form.errors.items()))
+        print(form.errors.items())
+    return render_template("error.html")
 
 
 if __name__ == "__main__":

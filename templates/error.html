@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sierra Flores - Error{% endblock %}</title>
+
+    {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
+
+    #newsbutton {
+        {% include "button_format.txt" %}
+    }
+
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+    <div class="text-start mx-4 justify-content-left">
+        <h1>Error</h1>
+        <h2>This page was not found, or you don't have permission to access it.</h2>
+        <a href="{{ url_for('home') }}" class="mb-0 footer-link"><h2><u>Go Home</u></h2></a>
+    </div>
+    {% endblock %}
+</body>
