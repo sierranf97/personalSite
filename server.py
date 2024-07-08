@@ -72,7 +72,9 @@ def projects():
 
 @app.route('/newsfeed')
 def news():
-    return render_template("newsfeed.html")
+    result = db.session.execute(db.select(Post))
+    posts = result.scalars().all()
+    return render_template("newsfeed.html", all_posts=posts)
 
 
 @app.route("/post/<int:post_id>", methods=["GET", "POST"])
@@ -133,11 +135,15 @@ def create():
         return render_template('create.html', form=form)
 
     if form.validate_on_submit():
+        if request.form['date'] == "":
+            post_date = date.today().strftime("%B %d, %Y")
+        else:
+            post_date = request.form['date']
         new_post = Post(
             post_type=request.form['type'],
             title=request.form['title'],
             subtitle=request.form['subtitle'],
-            date=date.today().strftime("%B %d, %Y"),
+            date=post_date,
             body=request.form['body'],
             img_url=request.form['img_url'],
             img_alt=request.form['img_alt'],

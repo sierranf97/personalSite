@@ -9,6 +9,7 @@ class CreatePostForm(FlaskForm):
     type = SelectField("Post Type", choices=['Event', 'Post'], validators=[DataRequired()])
     title = StringField("Post Title", validators=[DataRequired()])
     subtitle = StringField("Subtitle", validators=[DataRequired()])
+    date = StringField("Date")
     img_url = StringField("Image URL", validators=[DataRequired(), URL()])
     img_alt = StringField("Image Alt Text", validators=[DataRequired()])
     body = CKEditorField("Content", validators=[DataRequired()])
