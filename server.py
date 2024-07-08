@@ -157,5 +157,40 @@ def create():
     return render_template("error.html")
 
 
+@app.route('/edit/<int:post_id>', methods=["GET", "POST"])
+def edit(post_id):
+    input_password = request.args.get('pass')
+    requested_post = db.get_or_404(Post, post_id)
+    edit_form = CreatePostForm(
+        post_type=requested_post.post_type,
+        title=requested_post.title,
+        subtitle=requested_post.subtitle,
+        date=requested_post.date,
+        body=requested_post.body,
+        img_url=requested_post.img_url,
+        img_alt=requested_post.img_alt)
+
+    if input_password == my_secrets['ADMIN_PASSWORD'] and request.method == 'GET':
+        return render_template('create.html', form=edit_form)
+
+    if edit_form.validate_on_submit():
+        if request.form['date'] == "":
+            post_date = date.today().strftime("%B %d, %Y")
+        else:
+            post_date = request.form['date']
+        requested_post.post_type = request.form['type']
+        requested_post.title = request.form['title']
+        requested_post.subtitle = request.form['subtitle']
+        requested_post.date = request.form['date']
+        requested_post.img_url = request.form['img_url']
+        requested_post.img_alt = request.form['img_alt']
+        requested_post.body = request.form['body']
+        db.session.commit()
+        return redirect(url_for("news"))
+    elif request.method == 'POST':
+        flash(str(edit_form.errors.items()))
+        print(edit_form.errors.items())
+    return render_template("error.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
