@@ -21,3 +21,9 @@ class ContactForm(FlaskForm):
     email = EmailField("Email or Phone Number (optional, but very helpful if you'd like me to respond)", validators=[])
     message = TextAreaField("Message", validators=[DataRequired('A message is required')])
     submit = SubmitField("Send Message")
+
+
+class SoundtrackForm(FlaskForm):
+    song_title = StringField("Song Title", validators=[DataRequired('A song title is required')])
+    artist = StringField("Artist", validators=[DataRequired('An artist is required')])
+    submit = SubmitField("Submit")

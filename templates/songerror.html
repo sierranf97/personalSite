@@ -20,6 +20,10 @@
         background-color: #CFD6DE
     }
 
+    #projectsbutton {
+        {% include "button_format.txt" %}
+    }
+
     {% endblock %}
 
 </head>
@@ -27,8 +31,8 @@
     {% block content %}
     <div class="text-start mx-4 justify-content-left">
         <h1>Error</h1>
-        <h2>This page was not found, or you don't have permission to access it.</h2>
-        <a href="{{ url_for('home') }}" class="mb-0 footer-link"><h2><u>Go Home</u></h2></a>
+        <h2>The Spotify API did not return a preview for this song.</h2>
+        <a href="{{ url_for('soundtrack') }}" class="mb-0 footer-link"><h2><u>Try Another</u></h2></a>
     </div>
     {% endblock %}
 </body>

@@ -1,0 +1,55 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sierra Flores - My Soundtrack{% endblock %}</title>
+
+    {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
+
+    #projectsbutton {
+        {% include "button_format.txt" %}
+    }
+
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+        <div class="col mx-5">
+        <div class="row mb-1">
+            <h1>Find a Song Preview</h1>
+        </div>
+        <div class="row mb-4">
+            <h5 style="color:#5C6449">Enter a song title and/or artist to be redirected to a Spotify song preview</h5>
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+        </div>
+        <div class="col-2">
+        </div>
+        <div class="row my-4 justify-content-center">
+            <p>In the card game My Soundtrack, players have a hand of Song Cards, each of which displays a QR code. The QR code redirects to a website endpoint and encodes a song title and artist. The website endpoint takes the song title and artist and passes those parameters to the Spotify API, receiving a song preview URL in return. The website then redirects the user to the returned song preview url (if available).</p>
+            <img src="{{url_for('static', filename='assets/images/card_chart.png')}}" class="mb-3" style="width:75%" alt="A flow chart describing the flow of information from the game player, through the website, to the Spotify API, and back">
+            <p>To model that functionality here, I've created a simple form for users to input song title and artist. This is the information that is encoded in the QR codes on the Song cards.</p>
+            <img src="{{url_for('static', filename='assets/images/web_chart.png')}}" class="mb-3" style="width:75%" alt="A flow chart describing the flow of information from the website user, through the website, to the Spotify API, and back">
+        </div>
+    </div>
+    {% endblock %}
+</body>

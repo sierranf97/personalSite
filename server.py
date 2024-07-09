@@ -6,8 +6,9 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Text
 import smtplib
-from forms import CreatePostForm, ContactForm
+from forms import CreatePostForm, ContactForm, SoundtrackForm
 from dotenv import load_dotenv, dotenv_values
+from spotify import SpotifyReq
 import sqlite3
 
 load_dotenv()
@@ -191,6 +192,30 @@ def edit(post_id):
         flash(str(edit_form.errors.items()))
         print(edit_form.errors.items())
     return render_template("error.html")
+
+
+@app.route('/MySoudtrackOverview', methods=["GET", "POST"])
+def soundtrack():
+    if request.method == 'GET':
+        form = SoundtrackForm()
+        return render_template("mysoundtrack.html", form=form)
+    else:
+        song = request.form['song_title']
+        artist = request.form['artist']
+        print(url_for('soundtrack_search', song=song, artist=artist))
+        return redirect(url_for('soundtrack_search', song=song, artist=artist))
+
+
+@app.route('/MySoudtrackSearch')
+def soundtrack_search():
+    try:
+        song = request.args.get('song').strip()
+        artist = request.args.get('artist').strip()
+        interface = SpotifyReq()
+        return redirect(interface.search(song, artist))
+    except ValueError:
+        return render_template("songerror.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
