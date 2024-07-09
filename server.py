@@ -38,7 +38,7 @@ class Post(db.Model):
     __tablename__ = "posts"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     post_type: Mapped[str] = mapped_column(String(250), unique=False, nullable=False)
-    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
+    title: Mapped[str] = mapped_column(String(250), unique=False, nullable=False)
     subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
     date: Mapped[str] = mapped_column(String(250), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=True)
@@ -171,7 +171,7 @@ def edit(post_id):
         img_alt=requested_post.img_alt)
 
     if input_password == my_secrets['ADMIN_PASSWORD'] and request.method == 'GET':
-        return render_template('create.html', form=edit_form)
+        return render_template('edit.html', form=edit_form)
 
     if edit_form.validate_on_submit():
         if request.form['date'] == "":

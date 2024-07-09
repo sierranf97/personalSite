@@ -24,6 +24,18 @@
         color: #5C6449
     }
 
+    h4 {
+        color:#272F22
+    }
+
+    a {
+        color: #272F22;
+        text-decoration: underline;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
     #newsbutton {
         {% include "button_format.txt" %}
     }
@@ -38,8 +50,9 @@
                 <div class="py-4 px-3" style="background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('{{post.img_url}}')" title="{{post.img_alt}}">
                     <h1 class="post-title">{{ post.title }}</h1>
                     <h2 class="post-subtitle">{{ post.subtitle }}</h2>
+                    <h4 class="post-date">{{ post.date }}</h4>
                 </div>
-                <div class="my-4 px-3 mx-4">
+                <div class="my-4 px-4 mx-4">
                     {{ post.body|safe }}
                 </div>
             {% else: %}
@@ -51,10 +64,11 @@
                         <div class="col-10">
                             <h1 class="post-title">{{ post.title }}</h1>
                             <h2 class="post-subtitle">{{ post.subtitle }}</h2>
+                            <h4 class="post-date">{{ post.date }}</h4>
                         </div>
                     </div>
                 </div>
-                <div class="my-4 px-3 mx-4">
+                <div class="my-4 px-4 mx-4">
                     {{ post.body|safe }}
                 </div>
             {% endif %}

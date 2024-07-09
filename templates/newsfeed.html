@@ -34,9 +34,9 @@
 </head>
 <body>
     {% block content %}
-        {% for post in all_posts %}
+        {% for post in all_posts[::-1] %}
         <div class="col-9">
-            <div class="row mx-4 post-preview">
+            <div class="row mx-4 mb-4 post-preview">
                 {% if post.post_type == "Post": %}
                     <a href="{{ url_for('show_post', post_id=post.id) }}">
                       <h2 class="post-title">{{ post.title }}</h2>
@@ -46,23 +46,23 @@
                       Posted on {{post.date}}
                     </p>
                 {% else: %}
-                    <div class="col-3">
-                        <img src="{{ post.img_url }}" alt="{{ post.img_alt }}" width="100%">
+                    <div class="col-2">
+                        <img src="{{ post.img_url }}" alt="{{ post.img_alt }}" width="100%" style="color:#5C6449">
                     </div>
-                    <div class="col-9">
+                    <div class="col-10">
                         <a href="{{ url_for('show_post', post_id=post.id) }}">
                           <h2 class="post-title">{{ post.title }}</h2>
                           <h3 class="post-subtitle">{{ post.subtitle }}</h3>
                         </a>
                         <p class="post-meta">
-                          Posted on {{post.date}}
+                          {{post.date}}
                         </p>
                     </div>
                 {% endif %}
             </div>
           </div>
           <!-- Divider-->
-          <hr class="my-4" />
+        <hr>
         {% endfor %}
     {% endblock %}
 </body>
