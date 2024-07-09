@@ -29,6 +29,10 @@
             color: #9BA473;
         }
 
+        h4 {
+            color: #272F22;
+        }
+
         #homebutton {
             {% include "button_format.txt" %}
         }
@@ -70,7 +74,7 @@
     </div>
 
 <!-- Subpage Intros -->
-    <div class="row g-4 mt-3 mb-5 py-3 px-0 mw-100 d-flex flex-wrap justify-content-center container-fluid no-gutters" id="subpage-intros">
+    <div class="row g-4 my-3 py-3 px-0 mw-100 d-flex flex-wrap justify-content-center container-fluid no-gutters" id="subpage-intros">
         <div class="feature col mw-100">
         <a href="{{ url_for('about') }}">
               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill=#272F22 class="intro-icon bi-justify-left my-3" viewBox="0 0 16 16">
@@ -127,6 +131,17 @@
             <p>Send me a message or email.</p>
         </div>
         </a>
+        </div>
+    </div>
+
+    <div class="container mx-5 py-4">
+        <div class="row d-flex row-cols-xs-1 row-cols-2">
+            <div class="col-2"></div>
+            <div class="col-8 col-xs-12 py-4 px-4 text-center my-4" id="call-to-action">
+                <div class="row"><h4>I'm currently looking for remote or Dallas-based roles.</h4></div>
+                <div class="row"><h4>If you'd like to connect, you can message me through <a href="https://www.linkedin.com/in/sierra-flores/" class="recruiter-contact">LinkedIn</a> or reach out to me <a href="{{ url_for('contact') }}" class="recruiter-contact">here</a>.</h4></div>
+            </div>
+            <div class="col-2"></div>
         </div>
     </div>
     {% endblock %}

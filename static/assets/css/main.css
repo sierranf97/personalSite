@@ -104,6 +104,16 @@ a {
     opacity: 0.94;
 }
 
+#call-to-action {
+    background-color: #CFD6DE;
+    opacity: 0.7;
+}
+
+.recruiter-contact {
+    font-size: 19px;
+    color: #272F22;
+}
+
 .form-label{
     font-size: 16px;
     color: #272F22;
