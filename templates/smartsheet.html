@@ -1,0 +1,47 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sierra Flores - Smartsheet{% endblock %}</title>
+
+    {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
+
+    #projectsbutton {
+        {% include "button_format.txt" %}
+    }
+
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+        <div class="col mx-5">
+        <div class="row mb-1">
+            <h1>Smartsheet for Project Management</h1>
+        </div>
+        <div class="row mb-4">
+            <h5 style="color:#5C6449">Demo Project Sheet and Dashboard</h5>
+        </div>
+        <div class="row my-4 justify-content-center">
+            <p>Smartsheet is a project management software that allows users to organize data and create dashboards to easily communicate project statuses to stakeholders. I've created demo sheets to show how I've used this software to create scalable project tracking systems.</p>
+            <p><a class="card-link" href="{{url_for('static', filename='/assets/Demo_Project_Sheet.pdf')}}" target='_blank' style="font-size:16px"><u>Click here</u></a> to see an example Smartsheet project management sheet. This is the type of sheet I used to manage and scale Sound Agriculture's modular research operations.</p>
+            <p><a class="card-link" href="{{url_for('static', filename='/assets/Demo_Smartsheet_Dashboard.pdf')}}" target='_blank' style="font-size:16px"><u>Click here</u></a> to see an example Smartsheet dashboard. I've used this type of dashboard to run weekly team meetings for work coordination, and to forecast demand.</p>
+        </div>
+    </div>
+    {% endblock %}
+</body>

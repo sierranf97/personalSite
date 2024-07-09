@@ -217,5 +217,15 @@ def soundtrack_search():
         return render_template("songerror.html")
 
 
+@app.route('/Smartsheet')
+def smartsheet():
+    return render_template("smartsheet.html")
+
+
+@app.route('/SelfDisinfectingSurface')
+def self_disinfecting():
+    return render_template("smartsheet.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
