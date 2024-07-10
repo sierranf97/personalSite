@@ -9,7 +9,6 @@ import smtplib
 from forms import CreatePostForm, ContactForm, SoundtrackForm
 from dotenv import load_dotenv, dotenv_values
 from spotify import SpotifyReq
-import sqlite3
 
 load_dotenv()
 my_secrets = dotenv_values(".env")
@@ -224,7 +223,7 @@ def smartsheet():
 
 @app.route('/SelfDisinfectingSurface')
 def self_disinfecting():
-    return render_template("smartsheet.html")
+    return render_template("selfdisinfecting.html")
 
 
 if __name__ == "__main__":

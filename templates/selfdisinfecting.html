@@ -1,0 +1,52 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sierra Flores - Smartsheet{% endblock %}</title>
+
+    {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
+
+    #projectsbutton {
+        {% include "button_format.txt" %}
+    }
+
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+        <div class="col mx-5">
+        <div class="row mb-1">
+            <h1>Application of a Self-Disinfecting Surface for Hemodialysis</h1>
+        </div>
+        <div class="row mb-4">
+            <h5 style="color:#5C6449">Undergraduate Senior Design Project</h5>
+        </div>
+        <div class="row my-4 justify-content-center">
+            <p>Final poster, prepared for the Institute of Biological Engineering (IBE) Conference, April 2021. <a class="card-link" href="{{url_for('static', filename='/assets/IBE_Poster.pdf')}}" target='_blank' style="font-size:16px"><u>(Open poster as a PDF.)</u></a></p>
+            <img src="{{url_for('static', filename='assets/images/Final_IBE_Poster.jpg')}}" alt="A scientific poster detailing the creation of a self-disinfecting surface" class="mb-5">
+
+            <p>Intermediate poster and presentation, prepared for the Intermountain Biological Engineering Conference (IBEC), October 2020. <a class="card-link" href="{{url_for('static', filename='/assets/IBEC_Poster.pdf')}}" target='_blank' style="font-size:16px"><u>(Open poster as a PDF.)</u></a></p>
+            <img src="{{url_for('static', filename='assets/images/IBEC_Poster.jpg')}}" alt="A scientific poster detailing the creation of a self-disinfecting surface" class="mb-2">
+<!--            <video controls class="img-fluid mt-3" width="100%" style="align-self:center" title="A presentation about the creation of a self-disinfecting surface">-->
+<!--                <source src="{{url_for('static', filename='assets/images/IBEC_Presentation.mp4')}}" type="video/mp4" />-->
+<!--            </video>-->
+        </div>
+    </div>
+    {% endblock %}
+</body>
