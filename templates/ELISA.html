@@ -1,0 +1,42 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sierra Flores - ELISAs{% endblock %}</title>
+
+    {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
+
+    #projectsbutton {
+        {% include "button_format.txt" %}
+    }
+
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+    <div class="col mx-5">
+        <div class="row mb-1">
+            <h1>Development and Validation of a Multiplexed ELISA</h1>
+        </div>
+        <div class="row mb-4">
+            <iframe src="https://docs.google.com/presentation/d/1VX9Dx2ULX1wtWJGQVVIeKYYKg66RWGRw5GU70Qbsjp4/embed?start=false&loop=true&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+    </div>
+    {% endblock %}
+</body>

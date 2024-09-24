@@ -222,6 +222,11 @@ def smartsheet():
     return render_template("smartsheet.html")
 
 
+@app.route('/ELISA')
+def smartsheet():
+    return render_template("ELISA.html")
+
+
 @app.route('/SelfDisinfectingSurface')
 def self_disinfecting():
     return render_template("selfdisinfecting.html")
