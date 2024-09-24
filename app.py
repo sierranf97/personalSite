@@ -9,6 +9,7 @@ import smtplib
 from forms import CreatePostForm, ContactForm, SoundtrackForm
 from dotenv import load_dotenv, dotenv_values
 from spotify import SpotifyReq
+# import git
 
 load_dotenv()
 my_secrets = dotenv_values(".env")
@@ -224,6 +225,18 @@ def smartsheet():
 @app.route('/SelfDisinfectingSurface')
 def self_disinfecting():
     return render_template("selfdisinfecting.html")
+
+
+# @app.route('/update_server', methods=['POST'])
+#     def webhook():
+#         if request.method == 'POST':
+#             repo = git.Repo('path/to/git_repo')
+#             origin = repo.remotes.origin
+# origin.pull()
+# return 'Updated PythonAnywhere successfully', 200
+#         else:
+#             return 'Wrong event type', 400
+
 
 
 if __name__ == "__main__":
