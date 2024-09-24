@@ -223,7 +223,7 @@ def smartsheet():
 
 
 @app.route('/ELISA')
-def smartsheet():
+def ELISA():
     return render_template("ELISA.html")
 
 
