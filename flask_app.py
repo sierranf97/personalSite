@@ -9,7 +9,11 @@ import smtplib
 from forms import CreatePostForm, ContactForm, SoundtrackForm
 from dotenv import load_dotenv, dotenv_values
 from spotify import SpotifyReq
+import os
 # import git
+
+project_folder = os.path.expanduser('~/home/sierranf97/personalSite')  # adjust as appropriate
+load_dotenv(os.path.join(project_folder, '.env'))
 
 load_dotenv()
 my_secrets = dotenv_values(".env")
