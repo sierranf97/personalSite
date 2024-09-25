@@ -19,12 +19,12 @@ load_dotenv()
 my_secrets = dotenv_values(".env")
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = my_secrets['WEBSITE_KEY']
+app.config['SECRET_KEY'] = os.getenv('WEBSITE_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
 my_email = "sierranf97@gmail.com"
-password = my_secrets['EMAIL_PASSWORD']
+password = os.getenv('EMAIL_PASSWORD')
 
 
 class Base(DeclarativeBase):
