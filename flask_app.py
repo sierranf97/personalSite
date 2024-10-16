@@ -136,7 +136,7 @@ def sent():
 def create():
     input_password = request.args.get('pass')
     form = CreatePostForm()
-    if input_password == my_secrets['ADMIN_PASSWORD'] and request.method == 'GET':
+    if input_password == os.getenv('ADMIN_PASSWORD') and request.method == 'GET':
         return render_template('create.html', form=form)
 
     if form.validate_on_submit():
@@ -175,7 +175,7 @@ def edit(post_id):
         img_url=requested_post.img_url,
         img_alt=requested_post.img_alt)
 
-    if input_password == my_secrets['ADMIN_PASSWORD'] and request.method == 'GET':
+    if input_password == os.getenv('ADMIN_PASSWORD') and request.method == 'GET':
         return render_template('edit.html', form=edit_form)
 
     if edit_form.validate_on_submit():
