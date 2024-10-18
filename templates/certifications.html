@@ -1,0 +1,88 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sierra Flores - Certifications{% endblock %}</title>
+
+    {% block styles %}
+    .left-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    .right-margin {
+        background-color: #797A6D;
+        opacity: 0.8;
+    }
+
+    body {
+        background-color: #CFD6DE
+    }
+
+    a {
+            font-size: 17px;
+            color: #CFD6DE;
+            text-decoration: none;
+            font-family: "Hedvig Letters Serif", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+        }
+
+    .h6 {
+            color: #6B6F5B;
+            font-size: 18px;
+            font-family: "Hedvig Letters Serif", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    {% endblock %}
+
+</head>
+<body>
+
+    {% block margin %}
+    <div class="sticky-top col-12 mt-2 pt-4">
+        <div class="row mb-2">
+            <a href="#fe"  style="font-style: italic">Fundamentals of Engineering (EIT)</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#solidworks"  style="font-style: italic">SolidWorks (CSWA)</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#lean_yellow"  style="font-style: italic">Lean Project Management (Yellow Belt)</a>
+        </div>
+        <div class="row mb-2">
+            <a href="#six_sigma_white"  style="font-style: italic">Six Sigma Project Management (White Belt)</a>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+        <div class="col mx-5">
+        <div class="row mb-1">
+            <h1>Certifications</h1>
+        </div>
+        <div class="row mb-4">
+            <h5 style="color:#5C6449">Certifications/Verifications</h5>
+        </div>
+        <div class="row my-4 justify-content-center">
+            <p id="fe" class="mb-0 h6">Fundamentals of Engineering Exam - Other Disciplines, NCEES.</p>
+            <p class="mt-1 mb-0">Exam results can be verified by clicking <a href="https://account.ncees.org/rn/2142573-1346031-8bf5bc6" style='font-size: 16px; color: #272F22; font-family: "Poppins", sans-serif; font-weight: 400; font-style: normal; text-decoration:underline'>here</a>.</p>
+            <img src="https://images.credly.com/size/680x680/images/88aef29e-f999-46e1-9103-8c6f41b046fe/image.png" class="mt-1" style="width:40%">
+
+            <p id="solidworks" class="h6 mt-5">Certified SolidWorks Associate, Dassault Systèmes SolidWorks Corp.</p>
+            <img src="{{url_for('static', filename='/assets/images/CSWA_Certification.png')}}" class="img-fluid" alt="Official certificate of CSWA exam completion." style="width:100%">
+
+            <p id="lean_yellow" class="h6 mt-5">Lean Yellow Belt, Lean Project Management Foundation.</p>
+            <img src="{{url_for('static', filename='/assets/images/Lean_Yellow_Belt_Certification.png')}}" class="img-fluid" alt="Official certificate of Lean Yellow Belt exam completion." style="width:100%">
+
+            <p id="six_sigma_white" class="h6 mt-5">Six Sigma White Belt, Council for Six Sigma Certification.</p>
+            <img src="{{url_for('static', filename='/assets/images/Six_Sigma_White_Belt_Certification.png')}}" class="img-fluid" alt="Official certificate of Six Sigma White Belt exam completion." style="width:100%">
+        </div>
+    </div>
+    {% endblock %}
+</body>

@@ -236,6 +236,11 @@ def self_disinfecting():
     return render_template("selfdisinfecting.html")
 
 
+@app.route('/certifications')
+def certifications():
+    return render_template("certifications.html")
+
+
 # @app.route('/update_server', methods=['POST'])
 #     def webhook():
 #         if request.method == 'POST':
