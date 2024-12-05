@@ -241,6 +241,10 @@ def certifications():
     return render_template("certifications.html")
 
 
+@app.route('/confidence')
+def confidence():
+    return render_template("confidence.html")
+
 # @app.route('/update_server', methods=['POST'])
 #     def webhook():
 #         if request.method == 'POST':
