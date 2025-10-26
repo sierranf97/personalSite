@@ -7,7 +7,6 @@ from flask import render_template
 load_dotenv('/home/sierranf97/personalSite/.env')
 load_dotenv()
 my_secrets = dotenv_values(".env")
-print(my_secrets)
 
 TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token"
 SEARCH_ENDPOINT = "https://api.spotify.com/v1/search"
@@ -25,6 +24,7 @@ class SpotifyReq:
     def search(self, song_title, artist):
         # Get access token
         encoded = base64.b64encode((self.id + ":" + self.secret).encode("ascii")).decode("ascii")
+        print(encoded)
 
         headers = {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -45,13 +45,14 @@ class SpotifyReq:
 
         query = ""
         if song_title != "":
-            query += f"track:'{song_title}' "
+            query += f'track:"{song_title}" '
         if artist != "":
-            query += f"artist:'{artist}' "
+            query += f'artist:"{artist}" '
 
         params = {
             "q": query,
             "type": "track",
+            "limit": 1,
         }
 
         response = requests.get(url=SEARCH_ENDPOINT, headers=headers, params=params)
