@@ -1,17 +1,21 @@
 from dotenv import load_dotenv, dotenv_values
+import os
 import requests
 import base64
 from flask import render_template
 
+load_dotenv('/home/sierranf97/personalSite/.env')
 load_dotenv()
 my_secrets = dotenv_values(".env")
+print(my_secrets)
 
 TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token"
 SEARCH_ENDPOINT = "https://api.spotify.com/v1/search"
 
 class SpotifyReq:
     def __init__(self):
-        self.id = my_secrets['CLIENT_ID']
+        # self.id = my_secrets['CLIENT_ID']
+        self.id = os.getenv('CLIENT_ID')
         self.secret = my_secrets['CLIENT_SECRET']
         self.redirect = my_secrets['REDIRECT_URI']
 
