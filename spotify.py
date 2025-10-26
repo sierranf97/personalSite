@@ -15,9 +15,12 @@ SEARCH_ENDPOINT = "https://api.spotify.com/v1/search"
 class SpotifyReq:
     def __init__(self):
         # self.id = my_secrets['CLIENT_ID']
+        # self.secret = my_secrets['CLIENT_SECRET']
+        # self.redirect = my_secrets['REDIRECT_URI']
         self.id = os.getenv('CLIENT_ID')
-        self.secret = my_secrets['CLIENT_SECRET']
-        self.redirect = my_secrets['REDIRECT_URI']
+        self.secret = os.getenv('CLIENT_SECRET')
+        self.redirect = os.getenv('REDIRECT_URI')
+
 
     def search(self, song_title, artist):
         # Get access token
